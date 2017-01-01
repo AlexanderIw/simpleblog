@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  get 'public_pages/home'
+
+  get 'public_pages/blog'
+
+  get 'public_pages/projects'
+
+  get 'public_pages/resume'
+
+  get 'public_pages/contact'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'application#hello'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
