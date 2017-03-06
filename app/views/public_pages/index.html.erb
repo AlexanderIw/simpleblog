@@ -1,0 +1,107 @@
+<%provide(:title, 'Home page')%>
+<div class="left-side col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <article>
+	  <div class="blog-entry post-text">    
+	        <div class="post-title"> <h3>Post Entry Title</h3></div>
+	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+	        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+	        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+	        Aliquam in felis sit amet augue.</p>
+
+	       <a href="#" class="entry-link">  <p class="lead">Continue Reading...</p></a>
+	        <p class="pull-right">
+	          <a href="#"><span class="label label-default">keyword</span></a>
+	          <a href="#"><span class="label label-default">tag</span></a>
+	          <a href="#"><span class="label label-default">post</span></a>
+	        </p>
+	        <ul class="list-inline">
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 2 Days Ago</a></li>
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>
+	        </ul>
+	  </div>
+  </article>    
+  <article>
+	  <div class="blog-entry post-text">    
+	        <div class="post-title"> <h3>Post Entry Title</h3></div>
+	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+	        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+	        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+	        Aliquam in felis sit amet augue.</p>
+
+	       <a href="#" class="entry-link"><p class="lead">Continue Reading...</p></a>
+	        <p class="pull-right">
+		          <a href="#"><span class="label label-default">keyword</span></a>
+		          <a href="#"><span class="label label-default">tag</span></a>
+		          <a href="#"><span class="label label-default">post</span></a>
+	        </p>
+	        <ul class="list-inline">
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 2 Days Ago</a></li>
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>
+	        </ul>
+	  </div>
+  </article>    
+    <article>
+	  <div class="blog-entry post-text">    
+	        <div class="post-title"> <h3>Post Entry Title</h3></div>
+	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+	        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+	        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+	        Aliquam in felis sit amet augue.</p>
+
+	       <a href="#" class="entry-link">  <p class="lead">Continue Reading...</p></a>
+	        <p class="pull-right">
+		          <a href="#"><span class="label label-default">keyword</span></a>
+		          <a href="#"><span class="label label-default">tag</span></a>
+		          <a href="#"><span class="label label-default">post</span></a>
+	        </p>
+	        <ul class="list-inline">
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 2 Days Ago</a></li>
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>
+	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>
+	        </ul>
+	  </div>
+  </article>      
+</div><!--The end of leftside-->
+<div class="right-side col-xs-12 col-sm-12 col-md-4 col-lg-4">    
+  <aside class="side-panels">
+  	<header class="post-title aside-title"> ABOUT ME</header>
+ 	<div class="side-image text-center">
+ 		<%=image_tag("http://www.gravatar.com/avatar/462ff587891922fe3b768c1ba5818913?s=150",alt: 'Lonique Alexander', class: 'circular') %>
+	</div>
+	<div class='post-text'>
+	    <p>I'm a graduate from the Queens College Computer Science Department (BS with minor in mathematics). I'm looking for a <a href="/resume"><em><b>Full-Time Job</b></em></a>. My current research interest are in speech process and machine learning. In my spare time, I am learning how to build mobile app for the iphone, working hard to become a full-stack developer, reading great books and continue my Japanese studies.</p>
+	</div>
+  </aside>
+  <aside class="side-panels">
+  	<header class="post-title aside-title"> READING LIST</header>
+	<div class="post-text">
+		<div class="col-log-4 col-sm-6">Most Recent Book: Einstein: His Life and Universe by Walter Isaacson</div>
+		<div>
+		<div class="text-right aside-img">
+		<%= link_to(image_tag("http://ecx.images-amazon.com/images/I/51ms8Z2dU1L._SL500_PIsitb-sticker-arrow-big,TopRight,35,-73_OU01_SS100_.jpg", width: '100px', height: '100px' ), readinglist_path) %>
+		</div> 
+	</div>
+  </aside>
+
+  <aside class="side-panels">
+  	<header class="post-title aside-title"> JAPANESE STUDIES</header>
+	<div class="post-text">
+		<div class="col-lg-4 col-sm-6">Most Recent Jvlog: Self-introduction </div>
+		<div class="text-right aside-img">
+			<%= link_to(image_tag("niquepg.png", width: '100px', height: '100px' ), jap_path) %>
+		</div>
+	
+	</div>
+  </aside>
+  <aside class="side-panels">
+  	<header class="post-title aside-title"> SOCIAL</header>
+	<div class="side-image text-center">
+	    <a class= "github" href="https://github.com/niquepg" target = "_blank"></a>
+	    <a class= "googleplus" href="https://plus.google.com/u/0/112691597387228138752/about" target="_blank"></a>
+		<a class= "linkedin" href="http://www.linkedin.com/pub/lonique-alexander/28/1b0/7a3" target="_blank"></a>
+		<a class= "twitter" href="https://twitter.com/niquepg" target="_blank"></a>
+	</div>
+  </aside>
+</div>

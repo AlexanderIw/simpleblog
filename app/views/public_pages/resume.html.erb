@@ -1,2 +1,121 @@
-<h1>coming soon</h1>
-<h2>The last page you will ever need to visit!</h2>
+<%provide(:title, 'Resume Page')%>
+<div class="left-side col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   <article class="resume">
+   		<header class="post-title">  <h2>Education</h2></header>
+   		<div class="resume-entry">
+			<p class="res-highlight">Queens College, The City University of New York Flushing, New York</p>
+			<p>Bachelors of Science in Computer Science and Math minor May 2013</p><br>
+			<p class="res-highlight">LaGuardia Community College CUNY Long Island City, New York</p>
+			<p>Associate of Science in Computer Science June 2009</p>
+		</div>
+   </article>
+    <article class="resume">
+   		<header class="post-title">  <h2>Experience</h2></header>
+	   		<div class="resume-entry">
+			<p class="res-highlight">Queens College, Flushing, NY July 2012 – Present</p>
+			<p><em>Helpdesk support, Office of Converging Technologies</em></p>
+			<ul class="res-list">
+				<li>Provide desktop support for Mac and Window computers for student and faculty in person at Queens College print and copy center</li>
+				<li>Respond to support tickets such as general troubleshot, setting up a lap, imaging, virus removal, network connect, and more</li>
+				<li>Manage two library making sure computers, copiers, printers, and scanners are all fully functional</li>
+			</ul><br>
+			<p class="res-highlight">State of NY MTA, Bronx, NY March 2011 – April 2011</p>
+			<p><em>Web Development Internship</em></p>
+			<ul class="res-list">
+				<li>Updated the MTA internal (employees only) department website to use up to date web technologies such as CSS and JavaScript</li>
+				<li>Used jQuery library to add new functionally to the website such as drop down menu, customize slide shows and iframe</li>
+			</ul><br>
+			<p class="res-highlight">National Institutes of Health Bridges Program March 2009 - June 2009</p>
+			<p><em>Research Intern</em></p>
+			<ul class="res-list">
+				<li>Studied Digital Imaging Processing using MATLAB</li>
+				<li>Developed algorithms in MATLAB that helped improved black and white images</li>
+				<li>Presented monthly report to peers and professors on progression on the quality of black and white images</li>
+			</ul>
+		</div>
+   </article>
+   <article class="resume">
+		<header class="post-title"><h2>Programming Languages</h2></header>
+   		<div class="resume-entry">
+
+   			<table class="resume-table">
+   				<tr><th>Java</th>
+   					<td class="r-label"><strong><i> Expert</i></strong></td>
+   					<td>My most used language in my four years of college</td>
+   				</tr>
+   				<tr><th>Ruby</th>
+   					<td class="r-label"><strong><i> Competent</i></strong></td>
+   					<td>Web application with rails</td>
+   				</tr>
+   				<tr><th>JavaScript</th>
+   					<td class="r-label"><strong><i> Competent</i></strong></td>
+   					<td>reading JavaScript Ninja and lesson on CodeSchool</td>
+   				</tr>
+   				<tr><th>C/C++</th>
+   					<td class="r-label"><strong><i> Competent</i></strong></td>
+   					<td>I used it in a few classes in my four years of college</td>
+   				</tr>
+   				<tr><th>Python</th>
+   					<td class="r-label"><strong><i> Some Experience</i></strong></td>
+   					<td>I'd completed a few Udacity assignment</td>
+   				</tr>
+			</table>
+		</div>
+  </article>
+  <article class="resume">
+		<header class="post-title"><h2>Computer skills</h2></header>
+   		<div class="resume-entry">
+
+   			<table class="resume-table">
+   				<tr><th>Operating System</th>
+   					<td>OSX(current) and Ubuntu (former)</td>
+   				</tr>
+   				<tr><th>Source Control</th>
+   					<td>Git, GitHub</td>
+   				</tr>
+   				<tr><th>Testing</th>
+   					<td>Guard and Rspec</td>
+   				</tr>
+   				<tr><th>Web Technologies</th>
+   					<td>XHTML4, HTML5, CSS, CSS3, WebSockets, and HTTP</td>
+   				</tr>
+   				<tr><th>Frameworks</th>
+   					<td>Rails, bootstrap and Jquery</td>
+   				</tr>
+   				<tr><th>Databases</th>
+   					<td>Mysql and Oracle SQL</td>
+   				</tr>
+   				<tr><th>IDEs</th>
+   					<td>Eclipse and Microsoft Visual Studio 2008/2010</td>
+   				</tr>
+			</table>
+		</div>
+  </article>
+   <article class="resume">
+		<header class="post-title"><h2>Achievements And Activities</h2></header>
+		<div class="resume-entry">
+			<ul class="none"><li>National Institutes of Health Bridges Program, 2009</li>
+			<li>National Science Foundation STEM Scholarship Recipient (Fall 2009) </li>
+			<li>Self-taught web development (CSS, JavaScript, Ruby, Rails)</li></ul>
+		</div>
+  </article>
+   <article class="resume">
+   		<header class="post-title">  <h2>Extracurricular</h2></header>
+   		<div class="resume-entry">
+			<p class="res-highlight">Code School, Online Course Work, Present</p>
+			<p><strong>completed Course work!</strong></p>
+			<div class="res-classes">
+				
+				<%= link_to( image_tag("https://d1ffx7ull4987f.cloudfront.net/images/courses/small_badge/19/try-git-03e94b36b41c148431fff38a9d22c87a.png",alt: 'Try Git', width: '59'), 'http://www.codeschool.com/users/niquepg',target: '_blank')%>
+				<%= link_to( image_tag("https://d1ffx7ull4987f.cloudfront.net/images/courses/small_badge/29/try-jquery-d9dc70fda2a26ff0da46f6adc1953521.png",alt: 'Try Jquery',width: '53'), 'http://www.codeschool.com/users/niquepg',target: '_blank')%>
+			</div><br>
+			<div class="res-classes">
+				<p class="res-highlight">Udactiy, Online Course Work, Present</p>
+				<p><strong>completed Course work!</strong></p>
+
+				
+				<%= link_to( image_tag("https://lh6.ggpht.com/So4yjQXrjvuSV8_b_wuQCOhsZ_cTzjaGGWWWIhWXzpP9Ovw93nBXF3NaTekUvpyTHjtM-_FKM_60GdWl-g=s0",alt: 'web development', width: '150'), 'https://www.udacity.com/course/cs253',target: '_blank',)%>
+			</div>
+		</div>
+   </article>
+</div>

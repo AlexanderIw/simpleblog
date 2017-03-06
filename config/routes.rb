@@ -1,20 +1,30 @@
 Rails.application.routes.draw do
-  get 'public_pages/home'
+  get 'staff/index'
 
-  get 'public_pages/blog'
+  get 'staff/menu'
 
-  get 'public_pages/projects'
+  get 'staff/login'
 
-  get 'public_pages/resume'
+  get 'staff/logout'
 
-  get 'public_pages/contact'
+  #get 'public_pages/index'
+  #get 'public_pages/blog'
+  #get 'public_pages/projects'
+  #get 'public_pages/resume'
+  #get 'public_pages/contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
+  # See how all your routes lay out with "rake routes"
   # You can have the root of your site routed with "root"
-  root 'application#hello'
-
+  root :to => 'public_pages#index'
+  match '/blog',    to: 'public_pages#blog', :via => :get
+  match '/projects', to: 'public_pages#projects', :via => :get
+  match '/resume',   to: 'public_pages#resume', :via => :get
+  match '/leisure',   to: 'public_pages#leisure', :via => :get
+  match '/contact',  to: 'public_pages#contact', :via => :get
+  match '/jap',      to: 'public_pages#jap', :via => :get
+  match '/readinglist',    to: 'public_pages#books', :via => :get
+  match '/test', to: 'public_pages#test', :via => :get 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

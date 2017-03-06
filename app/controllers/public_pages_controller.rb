@@ -1,5 +1,7 @@
 class PublicPagesController < ApplicationController
-  def home
+  #get/posts
+  def index
+    @Posts= Post.all 
   end
 
   def blog

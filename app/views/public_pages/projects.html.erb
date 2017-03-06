@@ -1,2 +1,29 @@
-<h1>PublicPages#projects</h1>
-<p>Find me in app/views/public_pages/projects.html.erb</p>
+<%provide(:title, 'Project page')%>
+<div class="left-side col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   <article class="filter">
+  	 <header class="post-title"><p>FILTER:<a href="#"><span class="label label-default"> All</span></a><a href="#"><span class="label label-default">Iphone apps</span></a> <a href="#"><span class="label label-default">ruby</span></a> <a href="#"><span class="label label-default">Javascript</span></a> <a href="#"><span class="label label-default">web development</span></a> <a href=""><span class="label label-default">Japanese</span></a></p></header>
+  </article>
+   </article>
+	<article>
+		<div class="col-md-3 col-sm-4">
+			<div class="image-projects">
+				<%= image_tag("blog.png",  {height: '150px',width: '200px'}) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-sm-7">
+			  <div class="post-title"> <h3>Project: Niquepg's Blog</h3><h4>Ruby on Rails Blog: My first application design</h4></div>   
+
+		      <p>This is my personal website that I developed in Ruby on Rails and deployed on Heroku in my leisure time. Though, it does not do much. This web page is the start of my web development career. This site was written using the following technologies: Ruby on rails, Javascript, HTML5, and CSS3. I am still in the learning process of these technologies.</p>
+		      <a href="https://github.com/niquepg/niqueblog" class="entry-link">  <p class="lead">Grab Source @ GitHub</p></a>
+		      <p class="pull-right">
+     			  <a href="#"><span class="label label-default">keyword</span></a>
+		          <a href="#"><span class="label label-default">tag</span></a>
+		          <a href="#"><span class="label label-default">post</span></a>
+		       </p>
+		      <ul class="list-inline">
+		      <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 3 Days Ago</a></li></ul>
+			</div>
+		</div>
+	</article>
+</div>

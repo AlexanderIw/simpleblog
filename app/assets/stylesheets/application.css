@@ -10,9 +10,312 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ * require_tree .
+ * require_self
  */
-*{
-    background-color:#A9A9A9;
+*{margin: 0px;padding: 0px; }
+ body{
+  height: 100%; width: 100%;
+ }
+ body, h1,h2,h3,h4,h5,h6{
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+ }
+ /* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+       url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.test{
+  background-color: blue;
+}
+
+body.main{
+  background-color:#E7E7E7;
+}
+a,a:hover,a:focus,a:active,a.active {
+  outline: 0;
+  text-decoration: none;
+}
+
+/*--------****Header CSS start here*****-----*/
+.navbar {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+nav.navbar-custom {
+    background-color: #FFFFFF;
+    /*border:3px solid green;
+   padding-top: 1px;*/
+}
+
+body.main nav.navbar-custom a.header-link,
+  ol.breadcrumb li a, .entry-link, .post-link{
+  /*applies to all header links*/
+  color: #0000CD;
+  font-weight: 400;
+}
+
+body.main nav.navbar-custom a.header-link:hover,
+  ol.breadcrumb li a:hover{
+  /*applies to all top links on hover*/
+  text-decoration: none;
+  color: #BA55D3; 
+  font-weight: 600; 
+}
+.post-link:hover{text-decoration: none;color: #BA55D3;}
+body.main nav.navbar-custom a.current{
+  color: #BA55D3; 
+  font-weight: 600;
+}
+
+/*Spirit images*/
+.logo, .github, .googleplus, .linkedin, .twitter{ 
+  display: inline-block; 
+  background: url('social-media-sprite.png') no-repeat; 
+}
+.logo { background-position: 0px 0px; width: 50px; height: 45px;}
+.github { background-position: -0px -46px; width: 32px; height: 32px; }
+.googleplus { background-position: -0px -78px; width: 32px; height: 32px; }
+.linkedin { background-position: -0px -110px; width: 32px; height: 32px; }
+.twitter { background-position: -0px -142px; width: 32px; height: 32px; }
+
+/*create a cicule of image*/
+.circular {
+  width: 150px;height: 150px;border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
+
+.name-pos{position:relative;top:-15px;}/*make my name center relative to div it's in*/
+/*--------***END Header CSS END here*******-----*/
+
+ /*------Section between header and main body---------*/
+ .global-notifications{
+  margin-top: 110px;
+  padding: 0;
+ 	text-align: center;
+ 	font: bold 15px Tohoma ;
+ }
+
+
+/*End of header start of middle content*/
+#main-content{
+  /*border:5px solid black;*/
+  padding: 5px 0px 0px 0px;
+}
+/*End of header start of middle content*/
+
+/******  --------BLOG+INDEX AREA==========******/
+.lead{
+  border:1px solid #BA55D3;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  margin-top: 20px;
+}
+.lead-row{
+  color:#666666;
+}
+.lead-row:hover{
+  color:black;
+}
+.aside-img{
+  padding-right: 5px;
+}
+
+.entry-link{
+  display: block;
+}
+a.entry-link:hover,span.label:hover{
+  background-color: #BA55D3;
+  text-decoration: none;
+  color: white;
+
+}
+.left-side{
+  margin: 0;
+  float: left;
+}
+
+.right-side{
+  margin: 0;
+  float: left;
+
+}
+div.blog-entry{
+  /*border: 2px solid red;#f5f5f5*/
+  background-color: #FFFFFF ;
+  padding-right: 50px;
+  padding-left: 50px;
+  
+}
+.post-title{
+  text-align: center;
+  color: black;
+  
+}
+.aside-title{
+  font-weight: 500;
+
+}
+.post-text{
+   padding: 10px 10px 10px 10px;
+   background-color: #FFFFFF;
+}
+
+.image-entry{
+  overflow:hidden; 
+  background-color: #F0F0F0;
+  padding-bottom: 20px;
+}
+span.label{
+  background-color: #F8F8F8;
+  color: #0033CC;
+}
+/******--------End ==BLOG+INDEX AREA End==========******/
+/*----------- project area ------------------*/
+.projects{
+ /* display: block;
+  border: 5px solid blue;
+  padding: 20px 20px 20px 20px;
+  */
+}
+.image-projects{
+  margin-top: 50px;
+ text-align: center;
+
+}
+a.projects{
+  background-color: blue;
+}
+a.projects:hover{
+  display: block;
+  background-color: red;
+  border:4px solid green;
+}
+/*----------- project area ------------------*/
+
+/*---------------SIDE PANELS------------------*/
+aside.side-panels, 
+  div.left-side article{
+    background-color: #FFFFFF;
+    margin-bottom: 50px;
+}
+header.post-title{
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  border-bottom: 1px solid #E7E7E7;
+
+}
+.side-image{
+  padding-top: 9px;
+  padding-bottom: 5px;
+}
+/*
+span {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px; /* or 50% 
+    border-radius: 50px; /* or 50% 
+    padding-right: 3px;
+    background-color: #f2dede;
+}
+*/
+/******---------END BLOG+INDEX AREA-----------******/
+
+/*----Resume page--------*/
+.resume{
+  padding-bottom: 25px;
+}
+.resume-entry{
+   padding-left: 30px;
+   padding-top: 10px;
+}
+.resume header h2{
+	margin-bottom: 1px;
+  margin: 0px;
+}
+.resume p{
+	margin: 0px;
+}
+.res-highlight{
+	font-weight: bold;
+}
+.resume .res-highlight {
+	margin-top: 5px;
+}
+
+.res-list{ 
+  text-indent: 15px;
+  list-style-position: inside;
+}
+
+.resume-table td, tr{
+  margin: 5px 5px 5px 5px;
+  padding:  12px 5px 12px 5px;
+}
+.resume-table th, .r-label{
+  width: 100px;
+}
+
+.none{
+  list-style-type: none;
+}
+
+ol.breadcrumb{
+  background-color: #FFFFFF;
+}
+/*----End of Resume page--------*/
+
+.hash-link:hover{
+  /*color: #BA55D3;*/
+}
+.temp{
+    border-radius: 10px;
+  -webkit-border-radius:10;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+/* Set the fixed height of the footer here */
+.main-footer{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  background-color: #FFFFFF;
+}
+.contact{
+  background-color: #FFFFFF;
+  padding-top: 20px;
+
+}
+/*move stuff down after the second media query*/
+@media(min-width:768px) {
+
+    .navbar-fixed-top {
+        padding: 20px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-fixed-top .name-pos  {
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+    }
 }
