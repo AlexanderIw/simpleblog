@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources  :hashtags
+  get 'admin/index'
+
+  get 'admin/menu'
+
+  get 'admin/login'
+
+  get 'admin/logout'
+
   get 'staff/index'
 
   get 'staff/menu'
@@ -17,10 +27,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes"
   # You can have the root of your site routed with "root"
   root :to => 'public_pages#index'
-  match '/blog',    to: 'public_pages#blog', :via => :get
+  match '/blog',     to: 'public_pages#blog', :via => :get
   match '/projects', to: 'public_pages#projects', :via => :get
   match '/resume',   to: 'public_pages#resume', :via => :get
-  match '/leisure',   to: 'public_pages#leisure', :via => :get
+  match '/leisure',  to: 'public_pages#leisure', :via => :get
   match '/contact',  to: 'public_pages#contact', :via => :get
   match '/jap',      to: 'public_pages#jap', :via => :get
   match '/readinglist',    to: 'public_pages#books', :via => :get

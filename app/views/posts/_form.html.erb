@@ -1,0 +1,51 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table class="table table-striped table-bordered table-responsive">
+  <tr>
+    <th>Title</th>
+    <td><%= f.text_field(:title, size:40) %></td>
+  </tr>
+  <tr>
+    <th>Post Body</th>
+    <td><%= f.text_area(:body, col:70, row:20) %></td>
+  </tr>
+  <tr>
+    <th>Author</th>
+    <td><%= f.select(:user_id, @user_list) %></td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td><%= f.select(:status, ['draft', 'published']) %></td>
+  </tr>
+  <tr>
+    <th>Created At</th>
+    <td><%= f.datetime_select(:created_at, order:[:month,:day,:year],start_year: 2010, end_year:Time.now.next_year.year) %></td>
+  </tr>
+
+  <tr>
+    
+    <td>
+      <h2>Categories:</h2>
+      <ul>
+        <% @all_tags.each do |cat| %>
+          <li><%=check_box_tag('hashtags[]', cat.id, @post.hashtags.map{|c| c.id}.include?(cat.id)) %>
+            <%= cat.name %></li>
+        <%end %>
+      </ul>
+    </td>
+  </tr>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </table>
+<% end %>

@@ -1,0 +1,36 @@
+<%provide(:title, 'Listing Posts')%>
+<p id="notice"><%= notice %></p>
+<h1>Listing Posts</h1>
+<%= content_tag('p', link_to('«back', controller:'admin', action: 'menu') )%> <!--&laquo;-->
+<table class="table table-striped table-bordered table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Created</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Categories</th>
+      <th>Status</th>
+      <th>show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr class="">
+        <th  scope="row"><%= @count+=1 %></th>
+        <td><%=post.created_at.strftime('%m/%d/%y %I:%m %p')%></td>
+        <td><%=h(post.title) %></td>
+        <td><%=h(post.user.username) if post.user%></td>
+        <td><%=h(post.hashtags.collect{|tag| tag.name}.join(", ")) if post.hashtags%></td>
+        <td><%=h(post.status)%></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Post', new_post_path %>

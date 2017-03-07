@@ -1,0 +1,24 @@
+<h2>Welcome to Hashtags</h2>
+
+<table class="table table-striped table-bordered table-responsive">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Categories</th>
+      <th>Description</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr class="">
+        <th  scope="row"><%= @count+=1 %></th>
+        <td><%=tag.created_at.strftime('%m/%d/%y %I:%m %p')%></td>
+        <td><%=h(tag.name) %></td>
+        <td><%=h(tag.relation)%></td>
+        <td><%=h(tag.description)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
