@@ -6,6 +6,9 @@ class Post < ActiveRecord::Base
   belongs_to :user,  counter_cache:true    #class_name: user, foreign_key: user_id
   has_and_belongs_to_many :hashtags
 
+  #validations 
+  validates_presence_of :title
+  
   def should_generate_new_friendly_id?
       title_changed?
   end

@@ -25,9 +25,9 @@
         <td><%=h(post.user.username) if post.user%></td>
         <td><%=h(post.hashtags.collect{|tag| tag.name}.join(", ")) if post.hashtags%></td>
         <td><%=h(post.status)%></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', post, class:'btn btn-primary'%></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-sm btn-warning' %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data:{confirm:"are you sure?"}, class:'btn btn-sm btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>

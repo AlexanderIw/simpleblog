@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @user_list =get_user_list
   end
 
   # GET /posts/new
@@ -32,14 +31,12 @@ class PostsController < ApplicationController
   def create
     temp_params= post_params
     user_id= temp_params.delete(:user_id)
-    
-    @all_tags=get_all_hashtags 
     @post = Post.new(post_params)
     @post.user= User.find(user_id)
+    @all_tags=get_all_hashtags
     respond_to do |format|
       if @post.save
         update_hashtags(@all_tags)
-        flash[:notice]='Post was successfully created.' 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -53,13 +50,10 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    @user_list= get_user_list
-    @all_tags= get_all_hashtags
-
+    @user_list= get_user_list     #for the view
     respond_to do |format|
       if @post.update(post_params)
-        update_hashtags(@all_tags)
-        flash[:notice]="This post was Successfully updated."
+        update_hashtags(get_all_hashtags)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -87,7 +81,7 @@ class PostsController < ApplicationController
 
   def post_params   # Never trust parameters from the scary internet, only allow the white list through.
     #params.fetch(:post, {:title, :body, :user_id, :status, :created_at})
-    params.require(:post).permit(:title, :body, :user_id, :status, :hashtags, :created_at)
+    params.require(:post).permit(:title, :body, :user_id, :status, :created_at)
   end
 
   def get_user_list
@@ -110,6 +104,4 @@ class PostsController < ApplicationController
     checked_tags.each{|tag| @post.hashtags << tag if !@post.hashtags.include?(tag)}
     remove_tags.each {|tag| @post.hashtags.delete(tag) if @post.hashtags.include?(tag)}
   end
-
-
 end

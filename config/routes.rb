@@ -2,19 +2,12 @@ Rails.application.routes.draw do
   resources :posts
   resources  :hashtags
   get 'admin/index'
-
   get 'admin/menu'
-
   get 'admin/login'
-
   get 'admin/logout'
-
   get 'staff/index'
-
   get 'staff/menu'
-
   get 'staff/login'
-
   get 'staff/logout'
 
   #get 'public_pages/index'
