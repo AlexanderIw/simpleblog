@@ -1,27 +1,23 @@
 require 'rails_helper'
 #Given some context -> when some event occurs -> Then I expect some outcome 
 RSpec.describe "Static Pages", type: :request do
+  subject { page } #We can eliminate these sources of duplication by telling RSpec that page is the subject of the tests usingguar
   
   describe "Landing Page" do                                         #Given
-    before do 
-      visit root_path
-    end
-    
-    it "User not login.it should have the content 'ABOUT ME' " do    #when
-      expect(page).to have_content('ABOUT ME')                       #Then
-    end
+    before { visit root_path}
+
+    it{ should have_content('ABOUT ME')}
+    it{ should have_title("Lonique Alexander's") }
     it "should have the subset title 'Home Page' " do            #title is dynamic generated
       expect(page).to have_title("Home Page")  
     end
   end
 
   describe "Blog Page" do
-    before do 
-      visit '/blog' #or we can user visit blog_path
-    end
+    before { visit '/blog'} #or we can user visit blog_path
 
     it "should have the content 'RECENT POSTS'" do
-      expect(page).to have_content('RECENT POSTS')
+      should have_content('RECENT POSTS')
     end
     it "should have the subset title 'Blog Page'" do            
       expect(page).to have_title("Blog Page")  
