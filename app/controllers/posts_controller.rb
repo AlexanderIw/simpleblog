@@ -81,7 +81,7 @@ class PostsController < ApplicationController
 
   def post_params   # Never trust parameters from the scary internet, only allow the white list through.
     #params.fetch(:post, {:title, :body, :user_id, :status, :created_at})
-    params.require(:post).permit(:title, :body, :user_id, :status, :created_at)
+    params.require(:post).permit(:title, :content, :user_id, :status, :created_at)
   end
 
   def get_user_list

@@ -37,7 +37,7 @@ class HashtagsController < ApplicationController
     end
     
     def tag_params   # Never trust parameters from the scary internet, only allow the white list through.
-        params.require(:hashtag).permit(:name, :relation, :description)
+        params.require(:hashtag).permit(:name, :subject, :description)
     end
 
 end

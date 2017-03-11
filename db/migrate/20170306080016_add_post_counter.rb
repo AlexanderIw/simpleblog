@@ -1,5 +1,5 @@
 class AddPostCounter < ActiveRecord::Migration
-  def change
+  def up
     #modelName.underscore.pluralize_count
     add_column :users, :posts_count, :integer, limit: 4, default: 0, null: false
     User.all.each do |user|
@@ -7,5 +7,9 @@ class AddPostCounter < ActiveRecord::Migration
       puts user.posts.length
       user.update_attribute(:posts_count, current_count)
     end
+  end
+
+  def down
+    remove_column :users, :posts_count
   end
 end

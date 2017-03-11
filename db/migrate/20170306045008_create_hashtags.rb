@@ -2,7 +2,7 @@ class CreateHashtags < ActiveRecord::Migration
   def up
     create_table :hashtags do |t|
       t.string :name, :limit => 50,  :default => '', :null => false
-      t.string :relation, :limit => 25, :default => '', :null => false
+      t.string :subject, :limit => 50, :default => '', :null => false
       t.string :description, :default => '', :limit =>140
       t.timestamps
     end
@@ -13,6 +13,7 @@ class CreateHashtags < ActiveRecord::Migration
       t.belongs_to :hashtag, index:true
       t.belongs_to :post, index:true
   	end
+    #belongs_to create add_index for us
   	#add_index(:hashtags_posts, :hashtags_id)
   	#add_index(:hashtags_posts, :posts_id)
   end

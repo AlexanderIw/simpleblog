@@ -16,10 +16,13 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 group :development do
   gem 'web-console', '~> 2.0'  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'spring' #Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  
   gem 'rspec-rails','~> 3.5'      #for testing the rails app
   gem 'guard-rspec', '~> 4.7'     #automation of test
   gem 'rb-fsevent', '~> 0.9.8' if `uname` =~ /Darwin/ #monitor the file system on mac
   gem 'capybara', '~> 2.4.4'      #enable web app test and not just code
+
+  gem 'rails-footnotes', '~> 4.0'
 end
 
 group :development, :test do

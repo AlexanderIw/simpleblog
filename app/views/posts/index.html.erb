@@ -13,16 +13,16 @@
       <th>Status</th>
       <th>show</th>
       <th>Edit</th>
-      <th>Delete</th>
+      <th colspan="9">Delete</th>
     </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
       <tr class="">
-        <th  scope="row"><%= @count+=1 %></th>
+        <td  scope="row"><%= @count+=1 %></td>
         <td><%=post.created_at.strftime('%m/%d/%y %I:%m %p')%></td>
         <td><%=h(post.title) %></td>
-        <td><%=h(post.user.username) if post.user%></td>
+        <td><%=h(post.user.name) if post.user%></td>
         <td><%=h(post.hashtags.collect{|tag| tag.name}.join(", ")) if post.hashtags%></td>
         <td><%=h(post.status)%></td>
         <td><%= link_to 'Show', post, class:'btn btn-primary'%></td>

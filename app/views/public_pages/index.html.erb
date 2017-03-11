@@ -1,68 +1,32 @@
 <%provide(:title, 'Home Page')%>
 <div class="left-side col-xs-12 col-sm-12 col-md-8 col-lg-8">
-    <article>
-	  <div class="blog-entry post-text">    
-	        <div class="post-title"> <h3>Post Entry Title</h3></div>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-	        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-	        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-	        Aliquam in felis sit amet augue.</p>
-
-	       <a href="#" class="entry-link">  <p class="lead">Continue Reading...</p></a>
-	        <p class="pull-right">
-	          <a href="#"><span class="label label-default">keyword</span></a>
-	          <a href="#"><span class="label label-default">tag</span></a>
-	          <a href="#"><span class="label label-default">post</span></a>
-	        </p>
-	        <ul class="list-inline">
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 2 Days Ago</a></li>
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>
-	        </ul>
-	  </div>
-  </article>    
-  <article>
-	  <div class="blog-entry post-text">    
-	        <div class="post-title"> <h3>Post Entry Title</h3></div>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-	        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-	        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-	        Aliquam in felis sit amet augue.</p>
-
-	       <a href="#" class="entry-link"><p class="lead">Continue Reading...</p></a>
-	        <p class="pull-right">
-		          <a href="#"><span class="label label-default">keyword</span></a>
-		          <a href="#"><span class="label label-default">tag</span></a>
-		          <a href="#"><span class="label label-default">post</span></a>
-	        </p>
-	        <ul class="list-inline">
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 2 Days Ago</a></li>
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>
-	        </ul>
-	  </div>
-  </article>    
-    <article>
-	  <div class="blog-entry post-text">    
-	        <div class="post-title"> <h3>Post Entry Title</h3></div>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-	        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-	        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-	        Aliquam in felis sit amet augue.</p>
-
-	       <a href="#" class="entry-link">  <p class="lead">Continue Reading...</p></a>
-	        <p class="pull-right">
-		          <a href="#"><span class="label label-default">keyword</span></a>
-		          <a href="#"><span class="label label-default">tag</span></a>
-		          <a href="#"><span class="label label-default">post</span></a>
-	        </p>
-	        <ul class="list-inline">
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i> 2 Days Ago</a></li>
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>
-	          <li><a href="#" class="post-link"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>
-	        </ul>
-	  </div>
-  </article>      
+		<% @post.each do |post| %>
+			<article class="blog-entry post-text">
+				<div class="post-title"> <h3><%=post.title %></h3></div>
+				<p><%=post.content%></p>
+				<p class="lead"><%= link_to 'Full Article...', post, class:"entry-link"%></p>
+				<!--<a href="/<%post.title%>" class="entry-link">  <p class="lead">Full Article...</p></a>-->
+				<p class="pull-right">
+					 <% post.hashtags.each do |tag| %>
+						<a href="#"><span class="label label-default"><%=tag.name%></span></a>
+					<%end %>
+				</p>
+				<ul class="list-inline">
+					<li><a href="#" class="post-link"><i class="glyphicon glyphicon-calendar"></i><%=post.created_at%></a></li>
+					<li><a href="#" class="post-link"><i class="glyphicon glyphicon-comment"></i> 0 Comments</a></li>
+					<li class="dropdown">
+						<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+							<i class="glyphicon glyphicon-share"></i> Share<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Google Plus</a></li>
+							<li><a href="#">Facebook</a></li>
+						</ul>
+					</li>
+				</ul>
+		</article>
+	<%end%>     
 </div><!--The end of leftside-->
 <div class="right-side col-xs-12 col-sm-12 col-md-4 col-lg-4">    
   <aside class="side-panels">

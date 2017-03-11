@@ -1,6 +1,10 @@
 class PublicPagesController < ApplicationController
-  #get/posts
   def index
+    @post = Post.order(created_at: 'DESC').limit(3) #SELECT * FROM posts ORDER BY created_at DESC LIMIT 3;
+  end
+
+  def article
+    @post = Post.friendly.find(params[:id])
   end
 
   def blog

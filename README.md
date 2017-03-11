@@ -8,4 +8,6 @@ I am inspiring to become a Web Development via creating Ruby on Rails App and de
 tools:
 + gem [friendly_id](https://github.com/norman/friendly_id)
 + gem [devise](https://github.com/plataformatec/devise)
-+ guard rspec capybara
++ gems: guard rspec capybara
++ gem selenium-webdriver 
++ gem [bcrypt-rub](https://github.com/codahale/bcrypt-ruby)

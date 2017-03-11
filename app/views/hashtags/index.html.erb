@@ -19,7 +19,7 @@
         <th scope="row"><%= @count+=1 %></th>
         <td><%=tag.created_at.strftime('%m/%d/%y %I:%m %p')%></td>
         <td><%=h(tag.name) %></td>
-        <td><%=h(tag.relation)%></td>
+        <td><%=h(tag.subject)%></td>
         <td><%=h(tag.description)%></td>
         <td><%= link_to 'Show', tag %></td>
         <td><%= link_to 'Edit', edit_hashtag_path(tag) %></td>

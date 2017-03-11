@@ -9,15 +9,15 @@
     <meta name="copyright" content="Copyright 2014, Lonique Alexander">
     <meta name="version" content="0.0.1">
     <meta name="keywords" content="Lonique Alexander, Computer Scientist">
-    <meta name="description" content="This is a simple blog developed in RoR">
+    <meta name="description" content="This is a simpleblog developed in RoR">
     <meta name="revisit-after" content="2days">
     <meta name="robots" content="follow, index">
     <meta http-equiv="Content-type" content="text/html; charset-utf-8">
     <%= render 'layouts/shim'%>
     <%= favicon_link_tag "/favicon.ico" %>
     <%= stylesheet_link_tag 'bootstrap.min.css' %>
-    <%= stylesheet_link_tag 'application.css' %>
-  	<%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application.css', media:'all', 'data-turbolinks-track'=>true%>
+  	<%= csrf_meta_tags %><!--cross site request forgery-->
   </head>
   <body class="main">
     <%=render 'layouts/header' %>               <!--Header-->
@@ -31,13 +31,14 @@
     <div class="container shadow" id="main-content">           <!--body-->
       <%= yield %>
     </div>
-    <footer class="main-footer">      <!--footer-->
-      2013 © Lonique Alexander <a href="https://github.com/niquepg/niqueblog" target="_blank">view this site on github</a>
+    <footer class="footer main-footer">      <!--footer-->
+      2013-2017 © Lonique Alexander <a href="https://github.com/niquepg/niqueblog" target="_blank">view this site on github</a>
     </footer>
-    <!--<%= javascript_include_tag "jquery.min.js" %> rails call in application.js tree-->
+
     <%= javascript_include_tag "application.js" %>
-    <%= javascript_include_tag "respond.js"%>
     <%= javascript_include_tag "bootstrap.min.js"%>
+
+    <%= javascript_include_tag "respond.js"%>
     <%= javascript_include_tag "classie.js"%>
     <%= javascript_include_tag "cbpAnimatedHeader.js"%>
     <%= javascript_include_tag "custom.js"%>
