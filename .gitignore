@@ -32,3 +32,4 @@ doc/
 .idea
 .secret
 .keep
+.byebug_history

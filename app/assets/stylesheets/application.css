@@ -319,3 +319,10 @@ ol.breadcrumb{
         padding: 10px 0;
     }
 }
+
+#all_footnotes{}
+.debug_dump{
+  background-color:black;
+  color: white;
+}
+

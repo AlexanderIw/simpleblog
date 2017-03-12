@@ -14,8 +14,11 @@ class User < ActiveRecord::Base
     validates :password, presence: true, length:{minimum: 6}
     validates :password_confirmation, presence: true
 
+    before_save do
+         self.email = email.downcase
+         self.user_level = self.user_level || 1 #maybe put this in the controller
+    end
 
-    before_save { self.email = email.downcase }
 
     #def recent_posts
     #    self.posts.find(:all, order: 'created_at ASC', limit: 5)

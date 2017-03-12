@@ -11,3 +11,6 @@ tools:
 + gems: guard rspec capybara
 + gem selenium-webdriver 
 + gem [bcrypt-rub](https://github.com/codahale/bcrypt-ruby)
+
+api:
++ [gravatar](https://en.gravatar.com/site/implement/)

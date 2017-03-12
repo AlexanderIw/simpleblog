@@ -3,6 +3,7 @@ RSpec.describe User, type: :model do
   before do
     @user = User.new(name: "ExampleUser", email: "user@me.com",user_level:1, password: "foobar", password_confirmation: "foobar")
   end
+
   subject { @user }
 
   it { should respond_to(:name) }
@@ -37,7 +38,7 @@ RSpec.describe User, type: :model do
     before {@user.password ="a"*5}
     it{should_not be_valid}
   end 
-  #Emails  
+  
   describe "when email format is valid" do
     it "should be valid" do
       addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
@@ -75,11 +76,20 @@ RSpec.describe User, type: :model do
   end
   
   describe "return value of authenticate method" do
-    #before { @user.save }
-    #let(:found_user) { User.find_by(email: @user.email) }
-    #it{expect(:found_user).to valid}
+    before { @user.save }
+    let(:found_user) { User.find_by(email: @user.email) }
+   
+    describe "with valid password" do
+      it { should eq found_user.authenticate(@user.password) }
+    end
+
+    describe "with invalid password" do
+      let(:user_for_invalid_password) { found_user.authenticate("invalid") }
+
+      it { should_not eq user_for_invalid_password }
+      #specify { user_for_invalid_password.should be false }
+      specify { expect(user_for_invalid_password).to be false }
+
+    end
   end
-
-
-
 end

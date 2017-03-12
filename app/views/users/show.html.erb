@@ -1,5 +1,10 @@
+<%provide(:title, @user.name)%>
 <p id="notice"><%= notice %></p>
 <%= link_to 'Back', users_path %>
+
+<div class="side-image text-center">
+  <%= gravatar_for @user %>
+</div>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
