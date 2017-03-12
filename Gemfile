@@ -26,8 +26,15 @@ group :development do
   gem 'factory_girl_rails', '~> 4.0'   #factories are a more convenient way to define user objects and insert them in the database
   
   gem 'rails-footnotes', '~> 4.0'     #it is cool for debugging and learning
+  gem 'better_errors', '~> 2.1.1'     #more debugging
+  gem 'binding_of_caller', '~> 0.7.2' #debugger
+
+  gem 'guard-livereload', '~> 2.5.0' #optional productive tool 
 end
 
 group :development, :test do
   gem 'byebug', '~> 9.0.6'  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+end
+
+group :proudction do
 end

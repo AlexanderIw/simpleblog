@@ -9,10 +9,9 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- * require_self
- */
+ * require_self*/
 @import "bootstrap";
+
 *{margin: 0px;padding: 0px; }
  body{
   height: 100%; width: 100%;
@@ -320,9 +319,14 @@ ol.breadcrumb{
     }
 }
 
-#all_footnotes{}
+#footnotes_debug{
+    button:0px;
+    border: 3px solid #8AC007;
+}
+
+#toggle_footnotes{
+}
 .debug_dump{
   background-color:black;
   color: white;
 }
-
