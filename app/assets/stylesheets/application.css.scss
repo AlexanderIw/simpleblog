@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- * require_tree .
- * require_self
- */
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * require_self
+ */
+@import "bootstrap";
 *{margin: 0px;padding: 0px; }
  body{
   height: 100%; width: 100%;
@@ -73,7 +73,7 @@ body.main nav.navbar-custom a.header-link:hover,
   font-weight: 600; 
 }
 .post-link:hover{text-decoration: none;color: #BA55D3;}
-body.main nav.navbar-custom a.current{
+body.main nav.navbar-custom a.current, body.main nav.navbar-custom li.current{
   color: #BA55D3; 
   font-weight: 600;
 }
