@@ -11,11 +11,11 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap 
+//= require turbolinks
 
-var  currentActiveHeaderLink = (function (){
-	var url= document.URL, i=0,
+var currentActiveHeaderLink = (function (){
+	var url= document.URL.split("/"), i=0
 		links= document.getElementsByClassName("header-link");
 
 	function init(){
@@ -25,7 +25,6 @@ var  currentActiveHeaderLink = (function (){
 	}
 
 	function currentLink(){
- 		url= url.split("/");
 		if(url[3]===""){url[3]= links[0].innerHTML.toLowerCase();}
 
 		for(i=0; i<links.length; i++){
@@ -37,4 +36,14 @@ var  currentActiveHeaderLink = (function (){
  	}
 
 	init();
+	
+})();
+
+var autoCloseSuccessAlertLink= (function(){
+	function init(){
+		setTimeout(function() {
+				$(".alert-success").alert('close');
+			}, 1500);
+	}
+	//init(); not sure if i want the behavior 
 })();

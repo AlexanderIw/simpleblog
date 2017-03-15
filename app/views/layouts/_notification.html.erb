@@ -1,3 +1,11 @@
 <% if !flash[:notice].blank? %>
-		<p><%= flash[:notice] %> </p>
+      <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong><p><%= flash.notice %> </p> </strong>
+      </div>
+<% end %>
+<% if !flash[:success].blank? %>
+      <div class="alert alert-success">
+            <strong><p><%= flash[:success] %> </p> </strong>
+      </div>
 <% end %>

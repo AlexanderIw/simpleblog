@@ -12,6 +12,7 @@ RSpec.describe User, type: :model do
   it { should respond_to(:user_level) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
 
   it { should be_valid }  #it "should be valid" do expect(@user).to be_valid end
@@ -91,5 +92,12 @@ RSpec.describe User, type: :model do
       specify { expect(user_for_invalid_password).to be false }
 
     end
+
+    describe "authenticated? should return false for a user with nil digest" do
+      it {expect(@user.authenticated?("")).to be false}
+    end
+
+    
   end
+
 end

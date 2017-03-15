@@ -19,23 +19,19 @@
   	<%= csrf_meta_tags %><!--cross site request forgery-->
   </head>
   <body class="main">
-    <%=render 'layouts/header' %>                  <!--Header-->
+    <%=render 'layouts/header' %>                        <!--Header-->
 
-    <div class="container global-notifications ">  <!--notifications-->
-       <!-- <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>Hey!</strong> This page is still under heavy construction!!
-            <%=render 'layouts/notification'%>
-        </div>-->
+    <div class="container global-notifications ">        <!--notifications-->
+      <%=render 'layouts/notification'%>
     </div>
 
-    <div class="container shadow" id="main-content">           <!--body-->
+    <div class="container shadow" id="main-content">      <!--body-->
       <%= yield %>
     </div>
 
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>                        <!--footer-->
 
-    <%= javascript_include_tag "application.js" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
     <%= javascript_include_tag "classie.js"%>
     <%= javascript_include_tag "cbpAnimatedHeader.js"%>
   </body>
