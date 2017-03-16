@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%provide(:title, @tag.name)%>
+
+<p><strong>Title:</strong>
+    <%= @tag.name %>
+</p>
+
+<p><strong>Related To:</strong>
+    <%=@tag.subject %>
+</p>
+
+<p><strong>Description:</strong>
+<%= @tag.description %></p>
+
+
+<%= link_to 'Edit', edit_hashtag_path(@tag) %> |
+<%= link_to 'Back', hashtags_path %>

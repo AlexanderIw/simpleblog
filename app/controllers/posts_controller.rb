@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only:[:index, :new, :edit, :create, :update, :destroy]
+
   #layout "admin"
   # GET /posts
   # GET /posts.json
@@ -31,7 +33,7 @@ class PostsController < ApplicationController
   def create
     temp_params= post_params
     user_id= temp_params.delete(:user_id)
-    @post = Post.new(post_params)
+    @post = Post.new(post_params)      #get all post
     @post.user= User.find(user_id)
     @all_tags=get_all_hashtags
     respond_to do |format|
@@ -80,7 +82,6 @@ class PostsController < ApplicationController
   end
 
   def post_params   # Never trust parameters from the scary internet, only allow the white list through.
-    #params.fetch(:post, {:title, :body, :user_id, :status, :created_at})
     params.require(:post).permit(:title, :content, :user_id, :status, :created_at)
   end
 
@@ -90,7 +91,6 @@ class PostsController < ApplicationController
 
   def get_all_hashtags
     return Hashtag.all
-    #return Hashtag.order(name: :asc)
   end
   
   def get_tags_form(tag_list)
@@ -104,4 +104,5 @@ class PostsController < ApplicationController
     checked_tags.each{|tag| @post.hashtags << tag if !@post.hashtags.include?(tag)}
     remove_tags.each {|tag| @post.hashtags.delete(tag) if @post.hashtags.include?(tag)}
   end
+
 end

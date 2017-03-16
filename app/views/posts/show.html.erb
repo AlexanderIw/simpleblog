@@ -22,5 +22,5 @@
 <p><strong>Author:</strong>
 <%= @post.user ? @post.user.name : "no author"  %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Edit', edit_post_path(@post) %> |      <!--show, only if user is log in. i have a few ideas. but for now, there is redirect preventing a non user to edit the post-->
 <%= link_to 'Back', posts_path %>

@@ -1,5 +1,6 @@
 class HashtagsController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
+    before_action :logged_in_user, only:[:index, :show, :new, :edit, :create, :update, :destroy]
 
     def index
         @tags=Hashtag.all
@@ -11,6 +12,9 @@ class HashtagsController < ApplicationController
     end
     
     def edit 
+    end
+
+    def show 
     end
 
     def create
@@ -39,5 +43,5 @@ class HashtagsController < ApplicationController
     def tag_params   # Never trust parameters from the scary internet, only allow the white list through.
         params.require(:hashtag).permit(:name, :subject, :description)
     end
-
+    
 end

@@ -45,5 +45,5 @@ var autoCloseSuccessAlertLink= (function(){
 				$(".alert-success").alert('close');
 			}, 1500);
 	}
-	//init(); not sure if i want the behavior 
+	//init(); not sure if i want this behavior 
 })();
