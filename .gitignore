@@ -5,12 +5,11 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
+.rspec
 /.bundle
-
-# Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
 /tmp
+/log
+
 
 
 #Ignore the default SQLite database.
@@ -20,7 +19,6 @@
 #Ignore config files.
 /config/local_env.yml
 /config/secrets.yml
-/bower_components
 /vendor/assets/bower_components
 /public/assets
 #other files
@@ -32,4 +30,15 @@ doc/
 .idea
 .secret
 .keep
+.rbenv-vars
+
+#Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+# Ignore Byebug command history file.
 .byebug_history

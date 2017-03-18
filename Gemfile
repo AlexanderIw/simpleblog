@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.7'          #Rails
+gem 'rails',  '4.2.8'              #Rails
 gem 'mysql2', '>= 0.3.13', '< 0.5' # Use mysql as the database for Active Record
 
 gem 'bcrypt', '~> 3.1.7'      # Use ActiveModel has_secure_password
