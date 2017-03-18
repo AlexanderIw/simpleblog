@@ -30,7 +30,10 @@ doc/
 .idea
 .secret
 .keep
+<<<<<<< HEAD
 .rbenv-vars
+=======
+>>>>>>> 22165320af5dc98cc3cb718d62670fce3883885e
 
 #Ignore all logfiles and tempfiles.
 /log/*
