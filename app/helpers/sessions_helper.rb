@@ -16,7 +16,7 @@ module SessionsHelper
         if (user_id)    
             @current_user ||=User.find_by(id: user_id) 
         elsif (cookies.signed[:user_id]) #if not nil there is persistent sessions 
-            raise
+            #raise
             user= User.find_by(id: cookies.signed[:user_id]) 
             if user && user.authenticated?(cookies[:remember_token])
                 log_in user

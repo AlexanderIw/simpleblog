@@ -17,16 +17,20 @@ Bundler.require(*Rails.groups)
 
 module Simpleblog
   class Application < Rails::Application
+
     #reading in locally save config files
-    config.before_configuration do
-        env_file = File.join(Rails.root, 'config', 'local_env.yml')
-        YAML.load(File.open(env_file)).each do |key, value|
-        ENV[key.to_s] = value
-        end if File.exists?(env_file)
+    #in production, i am using env variables. 
+    #soon will switch to env variables on local machine
+    if (Rails.env.development? ||  Rails.env.test? ) 
+      config.before_configuration do
+          env_file = File.join(Rails.root, 'config', 'local_env.yml')
+          YAML.load(File.open(env_file)).each do |key, value|
+          ENV[key.to_s] = value
+          end if File.exists?(env_file)
+      end
     end
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

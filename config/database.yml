@@ -8,7 +8,6 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-#
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -46,9 +45,9 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
+
 production:
   <<: *default
   database: simpleblog_production
-  username: simpleblog
+  username: <%= ENV['SIMPLEBLOG_DATABASE_USER']%>
   password: <%= ENV['SIMPLEBLOG_DATABASE_PASSWORD'] %>
