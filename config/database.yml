@@ -51,3 +51,4 @@ production:
   database: simpleblog_production
   username: <%= ENV['SIMPLEBLOG_DATABASE_USER']%>
   password: <%= ENV['SIMPLEBLOG_DATABASE_PASSWORD'] %>
+  socket: /var/run/mysqld/mysqld.sock
