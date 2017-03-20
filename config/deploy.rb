@@ -9,6 +9,7 @@ set :repo_url, "git@github.com:niquepg/simpleblog.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/simpleblog"
+set :passenger_restart_with_touch, true
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -42,5 +43,5 @@ namespace :deploy do
   end
 
   after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
+  after :finishing,  'deploy:cleanup'
 end

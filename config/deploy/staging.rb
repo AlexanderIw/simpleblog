@@ -2,8 +2,7 @@
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
-set :stage, :production
-server '174.138.77.50', user: 'niquepg', roles: %w{web app db}, port: 4093
+
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
@@ -42,11 +41,11 @@ server '174.138.77.50', user: 'niquepg', roles: %w{web app db}, port: 4093
 #
 # Global options
 # --------------
-  set :ssh_options, {
-    keys: %w(~/.ssh/droplet),
-    forward_agent: true,
-    #auth_methods: %w(password)
-  }
+#  set :ssh_options, {
+#    keys: %w(/home/rlisowski/.ssh/id_rsa),
+#    forward_agent: false,
+#    auth_methods: %w(password)
+#  }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
