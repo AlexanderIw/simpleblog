@@ -6,11 +6,18 @@
 
 # Ignore bundler config.
 .rspec
+.project
+.DS_Store
+.idea
+.secret
+.keep
+.rbenv-vars
+.byebug_history
+.env
+
 /.bundle
 /tmp
 /log
-
-
 
 #Ignore the default SQLite database.
 /db/*.sqlite3
@@ -21,27 +28,7 @@
 /config/secrets.yml
 /vendor/assets/bower_components
 /public/assets
-#other files
-doc/
-*.swp
-*~
-.project
-.DS_Store
-.idea
-.secret
-.keep
-<<<<<<< HEAD
-.rbenv-vars
-=======
->>>>>>> 22165320af5dc98cc3cb718d62670fce3883885e
 
 #Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
-
-# dotenv
-# TODO Comment out this rule if environment variables can be committed
-.env
-
-# Ignore Byebug command history file.
-.byebug_history
