@@ -45,5 +45,4 @@ group :development, :test do
 end
 
 group :proudction do
-  gem 'puma', '~> 3.8', '>= 3.8.2'
 end
