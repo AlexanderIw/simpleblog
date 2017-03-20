@@ -44,5 +44,5 @@ group :development, :test do
   gem 'byebug', '~> 9.0.6'  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 end
 
-group :proudction do
+group :proudction do 
 end
