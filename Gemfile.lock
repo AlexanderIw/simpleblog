@@ -286,7 +286,6 @@ DEPENDENCIES
   mysql2 (>= 0.3.13, < 0.5)
   rails (= 4.2.8)
   rails-footnotes (~> 4.0)
-  rb-fsevent (~> 0.9.8)
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   selenium-webdriver (~> 3.3.0)

@@ -14,6 +14,7 @@
 .rbenv-vars
 .byebug_history
 .env
+*.sw*
 
 /.bundle
 /tmp
@@ -24,6 +25,7 @@
 /db/*.sqlite3-journal
 
 #Ignore config files.
+/config/database.yml
 /config/local_env.yml
 /config/secrets.yml
 /vendor/assets/bower_components
@@ -32,3 +34,8 @@
 #Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
+
+#PRODUCTION files
+/shared
+/repo
+/releases
