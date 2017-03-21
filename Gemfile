@@ -2,9 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',  '4.2.8'              #Rails
 gem 'mysql2', '>= 0.3.13', '< 0.5' # Use mysql as the database for Active Record
-
 gem 'bcrypt', '~> 3.1.7'      # Use ActiveModel has_secure_password
-gem 'sass-rails', '~> 5.0'    # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0'    # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.1.0'# Use CoffeeScript for .coffee assets and views
 gem 'turbolinks'   # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -13,6 +11,7 @@ gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.
 
 gem 'friendly_id',    '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'bootstrap-sass', '~> 3.3.7' #Bootstrap makes front-end web development faster and easier
+gem 'sass-rails', '~> 5.0'    # Use SCSS for stylesheets
 
 group :development do 
   #Testing 
