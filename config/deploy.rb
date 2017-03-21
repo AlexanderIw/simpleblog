@@ -2,7 +2,7 @@
 lock "3.8.0"
 
 set :application, "simpleblog"
-set :repo_url, "git@github.com:niquepg/simpleblog.git"
+set :repo_url, "https://github.com/niquepg/simpleblog.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
