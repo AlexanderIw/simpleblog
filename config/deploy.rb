@@ -11,6 +11,9 @@ set :repo_url, "git@github.com:niquepg/simpleblog.git"
 set :deploy_to, "/home/deploy/simpleblog"
 set :passenger_restart_with_touch, true
 
+# Defaults to [:web]
+set :assets_roles, [:web, :app]
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -24,7 +27,7 @@ set :passenger_restart_with_touch, true
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_files, "config/database.yml", "config/secrets.yml"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
+append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
