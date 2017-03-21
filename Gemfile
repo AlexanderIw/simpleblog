@@ -19,7 +19,7 @@ group :development do
   gem 'rspec-rails','~> 3.5'          #for testing the rails app
   gem 'guard-rspec', '~> 4.7'         #automate of test
   gem 'selenium-webdriver', '~>3.3.0' #more automations testing
-  gem 'rb-fsevent', '~> 0.9.8' if `uname` =~ /Darwin/ #monitor the file system on mac
+  gem 'rb-fsevent', '~> 0.9.8' if 'uname' =~ /Darwin/ #monitor the file system on mac
   gem 'capybara', '~> 2.4.4'           #enable test web app as a user ;-)
   gem 'factory_girl_rails', '~> 4.0'   #factories are a more convenient way to define user objects and insert them in the database
   

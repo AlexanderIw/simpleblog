@@ -6,34 +6,30 @@
 
 # Ignore bundler config.
 .rspec
+.project
+.DS_Store
+.idea
+.secret
+.keep
+.rbenv-vars
+.byebug_history
+.env
+*.sw*
+
 /.bundle
 /tmp
 /log
-
-
 
 #Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
 #Ignore config files.
+/config/database.yml
 /config/local_env.yml
 /config/secrets.yml
 /vendor/assets/bower_components
 /public/assets
-#other files
-doc/
-*.swp
-*~
-.project
-.DS_Store
-.idea
-.secret
-.keep
-<<<<<<< HEAD
-.rbenv-vars
-=======
->>>>>>> 22165320af5dc98cc3cb718d62670fce3883885e
 
 #Ignore all logfiles and tempfiles.
 /log/*
@@ -50,4 +46,3 @@ doc/
 /shared
 /repo
 /releases
-
