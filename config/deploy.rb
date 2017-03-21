@@ -12,7 +12,10 @@ set :deploy_to, "/home/deploy/simpleblog"
 set :passenger_restart_with_touch, true
 
 # Defaults to [:web]
-set :assets_roles, [:web, :app]
+#set :assets_roles, [:web, :app]
+
+# RAILS_GROUPS env value for the assets:precompile task. Default to nil.
+#set :rails_assets_groups, :assets
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -37,7 +40,6 @@ append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bun
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
